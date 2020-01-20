@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Event Prevent Default Demo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand mb-0 h1" href="#">View Highscores</a>
+        </nav>
+    </header>
+    <div class="container" id="optionDiv">
+        <div class="row mt-5">
+            <div class="col-sm-12 col-md-8 col-lg-8 m-auto">
+                <div class="card text-center" >
+                    <div class="card-body">
+                      <h3 class="card-title">Coding Quiz Challenge</h3>
+                      <p class="card-text">Following quiz provides Multiple Choice Questions (MCQs) related to Javascript Framework. You will have to read all the given answers and click over the correct answer.</p>
+                      <button type="button" class="btn btn-primary btn-lg" onclick="openQuiz()">Easy</button>
+                      <button type="button" class="btn btn-primary btn-lg" onclick="openQuiz()">Hard</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="quizDiv">
+        <div class="row mt-5">
+            <div class="col-sm-9 col-md-9 col-lg-9">
+                <div class="card text-center">
+                    <h4 class="card-header"> Coding Quiz Challege  </h4>
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <div class="card-text">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option1" name="option1" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio1"></label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option2" name="option2" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2"></label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option3" name="option3" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2"></label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option4" name="option4" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2"></label>
+                        </div>
+                      </div>
+                      <button type="button" class="btn btn-success" disabled>Next</button>
+                      <button type="button" class="btn btn-success">Restart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 mt-4 circle">
+                <div id="countdown">
+                    <div id="countdown-number"></div>
+                    <svg>
+                      <circle r="18" cx="20" cy="20"></circle>
+                    </svg>
+                </div>
+            </div>
+    </div>
+  
+<script src="assets/javascript/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
