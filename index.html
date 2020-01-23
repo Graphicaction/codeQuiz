@@ -21,40 +21,24 @@
                     <div class="card-body">
                       <h3 class="card-title">Coding Quiz Challenge</h3>
                       <p class="card-text">Following quiz provides Multiple Choice Questions (MCQs) related to Javascript Framework. You will have to read all the given answers and click over the correct answer.</p>
-                      <button type="button" class="btn btn-primary btn-lg" onclick="openQuiz()">Easy</button>
-                      <button type="button" class="btn btn-primary btn-lg" onclick="openQuiz()">Hard</button>
+                      <button type="button" id="easyBtn" class="btn btn-primary btn-lg" onclick="openQuiz()">Easy</button>
+                      <button type="button" id="hardBtn" class="btn btn-primary btn-lg" onclick="openQuiz()">Hard</button>
                     </div>
                   </div>
             </div>
         </div>
     </div>
-    <div class="container" id="quizDiv">
+    <div class="container" id="quizDiv" style="display: none;">
         <div class="row mt-5">
             <div class="col-sm-9 col-md-9 col-lg-9">
                 <div class="card text-center">
-                    <h4 class="card-header"> Coding Quiz Challege  </h4>
                     <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <div class="card-text">
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="option1" name="option1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio1"></label>
+                      <h5 class="card-title" id="questionTxt" ></h5>
+                        <div class="card-text m-auto" id="choiceDiv">
+                            <!-- radio buttons will populate dynamically -->
                         </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="option2" name="option2" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio2"></label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="option3" name="option3" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio2"></label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="option4" name="option4" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio2"></label>
-                        </div>
-                      </div>
-                      <button type="button" class="btn btn-success" disabled>Next</button>
-                      <button type="button" class="btn btn-success">Restart</button>
+                      <button type="button" id="nextBtn" class="btn btn-success btn-lg m-3" disabled>Next</button>
+                      <button type="button" id="restartBtn" class="btn btn-success btn-lg m-3" onclick="restart()">Restart</button>
                     </div>
                 </div>
             </div>
@@ -66,8 +50,32 @@
                     </svg>
                 </div>
             </div>
+        </div>
     </div>
-  
+    <div class="container scoreContainer p-5" id="scoreDiv" style="display: none;">
+        <div class="row">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <h1>All done!</h1>
+                    <h3 id="scoreText"></h3> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <form class="form-inline">
+                        <label>Initials</label>
+                        <input type="text" class="form-control mb-2 mr-sm-2" id="intialText" placeholder="JD">
+                        
+                        <button type="submit" class="btn btn-primary m-2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/javascript/questions.js"></script>   
 <script src="assets/javascript/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

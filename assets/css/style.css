@@ -1,7 +1,15 @@
+/* Declaring variables */
+:root {
+    --hue-neutral: 200;
+    --hue-incorrect: 0;
+    --hue-correct: 145;
+}
+
 body {
     height: 100%;
     width: 100%;
-    background-color: #333;
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue), 100%, 20%);
   }
   
   #countdown {
@@ -35,7 +43,7 @@ body {
     stroke-width: 2px;
     stroke: yellowgreen;
     fill: none;
-    animation: countdown 5s linear 1 forwards;
+    animation: countdown 30s linear 1 forwards;
   }
   
   @keyframes countdown {
@@ -50,5 +58,41 @@ body {
   /* styles for quiz block */
 
   #quizDiv {
-      display: none;
+    display: none;
   }
+
+  body.correct {
+      --hue: var(--hue-correct);
+  }
+
+  body.incorrect {
+    --hue: var(--hue-incorrect);
+}
+
+.card-text .row {
+  margin: auto;
+  margin-top: .25rem;
+  background-color: lightblue;
+  border: blue 1px solid;
+} 
+
+.row input {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.row label {
+  margin: auto;
+  padding: 0.5rem;
+}
+
+.row input:checked .row {
+  background: #08038C;
+  color: #000;
+}
+
+.scoreContainer {
+  background-color: white;
+  width: fit-content;
+  margin-top: 5rem;
+}
