@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand mb-0 h1" href="#">View Highscores</a>
+            <a class="navbar-brand mb-0 h1" href="highscore.html">View Highscores</a>
         </nav>
     </header>
     <div class="container" id="optionDiv">
@@ -38,6 +38,8 @@
                             <!-- radio buttons will populate dynamically -->
                         </div>
                       <button type="button" id="nextBtn" class="btn btn-success btn-lg m-3" disabled>Next</button>
+                      <audio id="audioCorrect" src="assets/audio/correctAnswer.mp3" ></audio>
+                      <audio id="audioIncorrect" src="assets/audio/incorrectAnswer.mp3" ></audio>
                       <button type="button" id="restartBtn" class="btn btn-success btn-lg m-3" onclick="restart()">Restart</button>
                     </div>
                 </div>
@@ -52,23 +54,20 @@
             </div>
         </div>
     </div>
-    <div class="container scoreContainer p-5" id="scoreDiv" style="display: none;">
+    <div class="container scoreContainer mt-5 p-5" id="scoreDiv" style="display: none;">
         <div class="row">
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                    <h1>All done!</h1>
-                    <h3 id="scoreText"></h3> 
-                </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h1 id="doneText"></h1>
+                <h3 id="scoreText"></h3> 
             </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                    <form class="form-inline">
-                        <label>Initials</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2" id="intialText" placeholder="JD">
-                        
-                        <button type="submit" class="btn btn-primary m-2">Submit</button>
-                    </form>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <form name="highscoreform" class="form-inline" action="" >
+                    <label class="my-1 mr-2 h5">Initials</label>
+                    <input type="text" name="initialText" class="form-control mb-2 mr-sm-2" id="intialText" maxlength="2" placeholder="JD" required>
+                    <button type="button" class="btn btn-primary mt-2" onclick="submitHighscores()">Submit</button>
+                </form>
             </div>
         </div>
     </div>

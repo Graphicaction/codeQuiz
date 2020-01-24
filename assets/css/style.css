@@ -1,4 +1,4 @@
-/* Declaring variables */
+/* Declaring variables to change body color based on the answer is right or wrong*/
 :root {
     --hue-neutral: 200;
     --hue-incorrect: 0;
@@ -43,7 +43,7 @@ body {
     stroke-width: 2px;
     stroke: yellowgreen;
     fill: none;
-    animation: countdown 30s linear 1 forwards;
+    animation: countdown 75s linear 1 forwards;
   }
   
   @keyframes countdown {
@@ -61,11 +61,11 @@ body {
     display: none;
   }
 
-  body.correct {
-      --hue: var(--hue-correct);
+  .correct {
+    --hue: var(--hue-correct);
   }
 
-  body.incorrect {
+  .incorrect {
     --hue: var(--hue-incorrect);
 }
 
@@ -86,13 +86,24 @@ body {
   padding: 0.5rem;
 }
 
-.row input:checked .row {
+#choiceDiv .row:hover {
+  background-color:#312864;
+  color: white;
+}
+input[type="radio"]:checked + .row {
   background: #08038C;
-  color: #000;
+  color: white;
 }
 
 .scoreContainer {
   background-color: white;
   width: fit-content;
-  margin-top: 5rem;
+}
+
+/* styles for highscore page: */
+#highscoreList {
+  font-weight: bolder;
+  font-size: large;
+  background-color:lightblue;
+  border: blue 1px solid;
 }
