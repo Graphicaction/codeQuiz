@@ -15,7 +15,7 @@ function startTimer(){
                 setTimeout(() => {
                     clearStatusClass(document.body);
                     displayScore();    
-                }, 1700)
+                }, 1000)
             }
             countdownNumberEl.textContent = "";
         }
@@ -178,8 +178,8 @@ var user = {
 
 function submitHighscores() {
     var txtInitial = document.getElementById("intialText").value.trim() ;
-    if(txtInitial == "") {
-        alert("Please enter your initials!");
+    if(txtInitial == "" || !(/^[A-Z]*$/.test(txtInitial))) {
+        alert("Please enter valid initials(ex. AB)!");
         return;
     }
     //getting and checking for highscore

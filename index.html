@@ -19,10 +19,10 @@
             <div class="col-sm-12 col-md-8 col-lg-8 m-auto">
                 <div class="card text-center" >
                     <div class="card-body">
-                      <h3 class="card-title">Coding Quiz Challenge</h3>
-                      <p class="card-text">Following quiz provides Multiple Choice Questions (MCQs) related to Javascript Framework. You will have to read all the given answers and click over the correct answer.</p>
-                      <button type="button" id="easyBtn" class="btn btn-primary btn-lg" onclick="openQuiz()">Easy</button>
-                      <button type="button" id="hardBtn" class="btn btn-primary btn-lg" onclick="openQuiz()">Hard</button>
+                      <h1 class="card-title">Coding Quiz Challenge</h1>
+                      <p class="card-text">Following quiz provides Multiple Choice Questions (MCQs) related to Javascript Framework. You will have to read all the given answers and click over the correct answer.Have fun and pay attention to get into our highscore page!.</p>
+                      <button type="button" id="easyBtn" class="btn btn-primary px-5 btn-lg rounded-pill" onclick="openQuiz()">Easy</button>
+                      <button type="button" id="hardBtn" class="btn btn-primary px-5 btn-lg rounded-pill" onclick="openQuiz()">Hard</button>
                     </div>
                   </div>
             </div>
@@ -37,10 +37,10 @@
                         <div class="card-text m-auto" id="choiceDiv">
                             <!-- radio buttons will populate dynamically -->
                         </div>
-                      <button type="button" id="nextBtn" class="btn btn-success btn-lg m-3" disabled>Next</button>
+                      <button type="button" id="nextBtn" class="btn btn-success btn-lg m-3 px-3 rounded-pill" disabled>Next</button>
                       <audio id="audioCorrect" src="assets/audio/correctAnswer.mp3" ></audio>
                       <audio id="audioIncorrect" src="assets/audio/incorrectAnswer.mp3" ></audio>
-                      <button type="button" id="restartBtn" class="btn btn-success btn-lg m-3" onclick="restart()">Restart</button>
+                      <button type="button" id="restartBtn" class="btn btn-success btn-lg m-3 px-3 rounded-pill" onclick="restart()">Restart</button>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                 <form name="highscoreform" class="form-inline" action="" >
                     <label class="my-1 mr-2 h5">Initials</label>
                     <input type="text" name="initialText" class="form-control mb-2 mr-sm-2" id="intialText" maxlength="2" placeholder="JD" required>
-                    <button type="button" class="btn btn-primary mt-2" onclick="submitHighscores()">Submit</button>
+                    <button type="button" class="btn btn-primary mt-2 rounded-pill" onclick="submitHighscores()">Submit</button>
                 </form>
             </div>
         </div>
