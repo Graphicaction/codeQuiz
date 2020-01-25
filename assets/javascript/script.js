@@ -10,6 +10,13 @@ function startTimer(){
         if(countdown !=0) {
             countdownNumberEl.textContent = countdown;
         }else {
+            if(countdown <= 0) {
+                message = "Time Up!";
+                setTimeout(() => {
+                    clearStatusClass(document.body);
+                    displayScore();    
+                }, 1700)
+            }
             countdownNumberEl.textContent = "";
         }
     }, 1000);        
@@ -74,14 +81,9 @@ function nextQuestion(qIndex, len) {
             correct = true;
             audioC.play();
         } else {
-            countdown -= 15;                //reduces 10s from timer if answer is incorrect
+            countdown -= 15;                //reduces 15s from timer if answer is incorrect
             correct = false;
             audioInC.play();
-            if(countdown < 0) {
-                message = "Time Up!";
-                displayScore();
-                return;
-            }
         }
         qIndex++;
         setStatusClass(document.body, correct);
@@ -93,15 +95,8 @@ function nextQuestion(qIndex, len) {
             setTimeout(() => {
                 clearStatusClass(document.body);
                 displayScore();    
-            }, 2000);
+            }, 1500);
             return;
-        }
-        if(countdown < 0) {
-            message = "Time Up!";
-            setTimeout(() => {
-                clearStatusClass(document.body);
-                displayScore();    
-            }, 2000)
         }
         if(inValid) {
             return;
@@ -182,10 +177,19 @@ var user = {
 };
 
 function submitHighscores() {
+    var txtInitial = document.getElementById("intialText").value.trim() ;
+    if(txtInitial == "") {
+        alert("Please enter your initials!");
+        return;
+    }
+    //getting and checking for highscore
     var userStored = JSON.parse(localStorage.getItem("highScore"));
-    var highScore = userStored.userScore;
-    var highscoreUser = userStored.userInitial;
-    user.userInitial = document.getElementById("intialText").value.trim() ;
+    var highScore = 0;
+    if(userStored != null) {
+        highScore = userStored.userScore;
+        var highscoreUser = userStored.userInitial;
+    }
+    user.userInitial = txtInitial.toUpperCase();
     user.userScore = score;
     if(highScore !== null){
         if (score >= highScore) {
@@ -202,12 +206,16 @@ function submitHighscores() {
 
 function viewScore() {
     highScores = JSON.parse(localStorage.getItem("highScore"));
-    userInitial = highScores.userInitial;
-    userScore = highScores.userScore;
-    userList = userInitial + " ---->  " + userScore;
-    var newList = $("<li>");
-    newList.text(userList);
-    $("#highscoreList").append(newList);
+    if(highScores != null) {
+        userInitial = highScores.userInitial;
+        userScore = highScores.userScore;
+        userList = userInitial + " ---->  " + userScore;
+        var newList = $("<li>");
+        newList.text(userList);
+        $("#highscoreList").append(newList);
+    } else {
+        clearScore();
+    }
 }
 
 function back() {
@@ -215,5 +223,6 @@ function back() {
 }
 
 function clearScore() {
+    localStorage.clear();
     $("#highS").empty();
 }
