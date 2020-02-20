@@ -10,24 +10,29 @@
 </head>
 
 <body onload="viewScore()">
-    <div class="container mt-5" id="highscoreDiv">
-        <div class="row">
-            <div class="col-sm-12 col-md-8 col-lg-8 m-auto">
-                <div class="card text-center border-warning" >
-                    <div class="card-body">
-                      <h1 class="card-title">Highscores</h1>
-                      <div id="highS">
-                        <ol class="card-title px-5 py-3 mb-4" id="highscoreList">
-                          <!-- list is populated dynamically from database -->
-                        </ol>
-                      </div>
-                      <button type="button" id="backBtn" class="btn btn-primary btn-lg mr-5" onclick="back()">Go Back</button>
-                      <button type="button" id="clearBtn" class="btn btn-primary btn-lg ml-5" onclick="clearScore()">Clear Highscore</button>
+  <header>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand mb-0 h1" href="index.html">Back to Quiz</a>
+    </nav>
+  </header>
+  <div class="container mt-5" id="highscoreDiv">
+      <div class="row">
+          <div class="col-sm-12 col-md-8 col-lg-8 m-auto">
+              <div class="card text-center border-warning" >
+                  <div class="card-body">
+                    <h1 class="card-title">Highscores</h1>
+                    <div id="highS">
+                      <ol class="card-title px-5 py-3 mb-4" id="highscoreList">
+                        <!-- list is populated dynamically from database -->
+                      </ol>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <button type="button" id="backBtn" class="btn btn-primary btn-lg mr-5" onclick="back()">Go Back</button>
+                    <button type="button" id="clearBtn" class="btn btn-primary btn-lg ml-5" onclick="clearScore()">Clear Highscore</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="assets/javascript/script.js"></script>

@@ -87,9 +87,11 @@ function nextQuestion(qIndex, len) {
         }
         qIndex++;
         setStatusClass(document.body, correct);
-        if(qIndex === len - 1) {
-            btnNext.textContent = 'Finish';
-        }
+        setTimeout(() => {
+            if(qIndex === len - 1) {
+                btnNext.textContent = 'Finish';
+            }  
+        }, 2000); 
         if(qIndex === len) {
             inValid = true;
             setTimeout(() => {
